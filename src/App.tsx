@@ -1,15 +1,27 @@
+// import "./App.css";
+// import { Routes, Route } from "react-router-dom";
+// import Layout from "./components/Layout";
 
-import './App.css'
-import { Button } from './components/ui/button'
+// function App() {
+//   return (
+//     <>
+//       <Routes>
+//         <Route path="/" element={<Layout />}>
+//           {/* <Route index element={<Navigate to="/books" />} /> */}
+//         </Route>
+//       </Routes>
+//     </>
+//   );
+// }
 
-function App() {
-  
+// export default App;
 
-  return (
-    <>
-      <Button>Click me</Button>
-    </>
-  )
-}
 
-export default App
+import { Outlet } from 'react-router-dom';
+
+const App = () => {
+  return <Outlet />;
+};
+
+export default App;
+
