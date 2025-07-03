@@ -1,69 +1,101 @@
-# React + TypeScript + Vite
+# 📚 Library Management System – Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **frontend** of the Minimal Library Management System, developed with **React**, **TypeScript**, **Tailwind CSS**, and **Redux Toolkit Query**. It allows users to manage a collection of books, perform borrowing operations, and view a real-time borrow summary. This project is part of an academic assignment.
 
-Currently, two official plugins are available:
+***Live Link: https://library-management-client-three.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ✅ View list of all available books
+- ✅ Create, update, and delete books
+- ✅ Borrow books with quantity and due date
+- ✅ View borrow summary with total quantity borrowed per book
+- ✅ Real-time updates with RTK Query
+- ✅ Toast notifications for user feedback
+- ✅ Fully responsive and mobile-friendly UI using Tailwind CSS
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **React** – Frontend library
+- **TypeScript** – Static typing
+- **Tailwind CSS** – Utility-first CSS framework
+- **Redux Toolkit (RTK)** + **RTK Query** – State and data fetching
+- **React Hook Form** – Form management
+- **Vite** – Lightning-fast dev server and bundler
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📁 Folder Structure
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+src/
+│
+├── components/ # Reusable UI components
+├── pages/ # Route-level pages (BookList, CreateBook, EditBook, BorrowSummary)
+├── redux/ # RTK Query setup and API definitions
+├── types/ # TypeScript interfaces
+└── main.tsx # App entry point
+
+---
+
+## 🌐 Environment Variables
+
+Create a `.env` file in the root of the project:
+
+VITE_API_BASE_URL=http://localhost:5000/api
+
+> ⚠️ Make sure to replace the URL when deploying to production.
+
+---
+
+## 🧪 Getting Started
+
+### 1️⃣ Create a folder
+
+cd library-management-client
+2️⃣ Install Dependencies
+
+npm install
+3️⃣ Start the Development Server
+
+npm run dev
+The app will run on http://localhost:5173
+
+🧑‍💻 Available Scripts
+Script	Description
+npm run dev	Start dev server (Vite)
+npm run build	Build for production
+npm run preview	Preview production build
+
+🌍 Deployment
+This app is deployable on Vercel, Netlify, or any static hosting provider.
+
+On Vercel:
+Push the code to GitHub
+
+Connect the repo to Vercel
+
+Add VITE_API_BASE_URL in the Environment Variables section
+
+Deploy
+
+Also deploy with the command of vercel
+
+if it has to redeploy just command: vercel --prod
+
+📦 Backend Repository
+https://github.com/Sarfaraj525/library-management-server
+
+👉 Link to Backend Repository
+https://library-management-server-gamma-sand.vercel.app/
+
+📚 License
+This project is open-source and available for educational purposes.
+
+🙋‍♂️ Author
+Sarfaraj Nawaz Chowdhury
+📧 sarfarajeee525@gmail.com
+🔗 www.linkedin.com/in/sarfaraj-nawaz-chowdhury
