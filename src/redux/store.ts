@@ -1,15 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import bookReducer from "./features/bookSlice";
 import { bookApi } from "./features/book.api";
-// import { bookApi } from './features/book.api' // 👈 Import your RTK Query API
 
 export const store = configureStore({
   reducer: {
-    [bookApi.reducerPath]: bookApi.reducer, // 👈 Add RTK Query reducer
-    book: bookReducer, // your optional local slice
+    [bookApi.reducerPath]: bookApi.reducer,
+    book: bookReducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(bookApi.middleware), // 👈 Add RTK Query middleware
+    getDefaultMiddleware().concat(bookApi.middleware),
 });
 
 // Types

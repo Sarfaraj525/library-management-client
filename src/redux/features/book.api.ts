@@ -1,3 +1,4 @@
+import { BASE_URL } from "@/lib/env";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export interface Book {
@@ -17,13 +18,9 @@ export interface BorrowSummary {
   totalQuantity: number;
 }
 
-const url: string =
-  import.meta.env.VITE_API_BASE_URL ;
-
-  // console.log("📡 API Base URL:", url);
 export const bookApi = createApi({
   reducerPath: "bookApi",
-  baseQuery: fetchBaseQuery({ baseUrl: url }),
+  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
   tagTypes: ["Books", "Borrow"],
   endpoints: (b) => ({
     // GET ALL BOOKS
@@ -34,7 +31,6 @@ export const bookApi = createApi({
         message: string;
         books: Book[];
       }) => {
-        console.log("✅ Response from API:", response);
         return response.books;
       },
       providesTags: ["Books"],
