@@ -1,4 +1,7 @@
-import { useGetBooksQuery, useDeleteBookMutation } from "../redux/features/book.api";
+import {
+  useGetBooksQuery,
+  useDeleteBookMutation,
+} from "../redux/features/book.api";
 import { useNavigate } from "react-router-dom";
 import { FaEdit, FaTrash, FaBookReader, FaEye } from "react-icons/fa";
 import toast from "react-hot-toast";
@@ -37,7 +40,10 @@ const BookListPage = () => {
   const books = Array.isArray(data) ? data : [];
 
   if (isLoading) return <p className="text-center mt-4">Loading books...</p>;
-  if (isError) return <p className="text-center text-red-600 mt-4">Error loading books.</p>;
+  if (isError)
+    return (
+      <p className="text-center text-red-600 mt-4">Error loading books.</p>
+    );
 
   return (
     <div className="max-w-6xl mx-auto p-4">
@@ -56,11 +62,21 @@ const BookListPage = () => {
           <thead className="bg-gray-100">
             <tr>
               <th className="border px-2 py-1 text-left">Title</th>
-              <th className="border px-2 py-1 text-left hidden sm:table-cell">Author</th>
-              <th className="border px-2 py-1 text-left hidden md:table-cell">Genre</th>
-              <th className="border px-2 py-1 text-left hidden md:table-cell">ISBN</th>
-              <th className="border px-2 py-1 text-center hidden sm:table-cell">Copies</th>
-              <th className="border px-2 py-1 text-center hidden sm:table-cell">Available</th>
+              <th className="border px-2 py-1 text-left hidden sm:table-cell">
+                Author
+              </th>
+              <th className="border px-2 py-1 text-left hidden md:table-cell">
+                Genre
+              </th>
+              <th className="border px-2 py-1 text-left hidden md:table-cell">
+                ISBN
+              </th>
+              <th className="border px-2 py-1 text-center hidden sm:table-cell">
+                Copies
+              </th>
+              <th className="border px-2 py-1 text-center hidden sm:table-cell">
+                Available
+              </th>
               <th className="border px-2 py-1 text-center">Actions</th>
             </tr>
           </thead>
@@ -68,10 +84,18 @@ const BookListPage = () => {
             {books.map((b) => (
               <tr key={b._id} className="border-t hover:bg-gray-50">
                 <td className="border px-2 py-1">{b.title}</td>
-                <td className="border px-2 py-1 hidden sm:table-cell">{b.author}</td>
-                <td className="border px-2 py-1 hidden md:table-cell">{b.genre}</td>
-                <td className="border px-2 py-1 hidden md:table-cell">{b.isbn}</td>
-                <td className="border px-2 py-1 text-center hidden sm:table-cell">{b.copies}</td>
+                <td className="border px-2 py-1 hidden sm:table-cell">
+                  {b.author}
+                </td>
+                <td className="border px-2 py-1 hidden md:table-cell">
+                  {b.genre}
+                </td>
+                <td className="border px-2 py-1 hidden md:table-cell">
+                  {b.isbn}
+                </td>
+                <td className="border px-2 py-1 text-center hidden sm:table-cell">
+                  {b.copies}
+                </td>
                 <td className="border px-2 py-1 text-center hidden sm:table-cell">
                   {b.available ? "✅" : "❌"}
                 </td>

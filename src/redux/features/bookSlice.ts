@@ -1,21 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit'
-
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    value: 0,
+  value: 0,
 };
 
-
 export const bookSlice = createSlice({
-  name: 'book',
+  name: "book",
   initialState,
-  reducers: {
-    
-  }
-})
+  reducers: {},
+});
 
-
-
-
-
-export default bookSlice.reducer
+export default bookSlice.reducer;

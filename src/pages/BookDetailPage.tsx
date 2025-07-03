@@ -1,4 +1,3 @@
-
 import { useParams, useNavigate } from "react-router-dom";
 import { useGetBookQuery } from "../redux/features/book.api";
 import { FaArrowLeft } from "react-icons/fa";

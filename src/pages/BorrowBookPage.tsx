@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useGetBookQuery, useBorrowBookMutation } from "../redux/features/book.api";
+import {
+  useGetBookQuery,
+  useBorrowBookMutation,
+} from "../redux/features/book.api";
 import toast from "react-hot-toast";
 
 const BorrowBookPage = () => {
@@ -42,15 +45,19 @@ const BorrowBookPage = () => {
     }
   };
 
-  if (isLoading) return <p className="text-center mt-4">Loading book data...</p>;
-  if (isError || !book) return <p className="text-center text-red-600 mt-4">Book not found.</p>;
+  if (isLoading)
+    return <p className="text-center mt-4">Loading book data...</p>;
+  if (isError || !book)
+    return <p className="text-center text-red-600 mt-4">Book not found.</p>;
 
   return (
     <div className="max-w-md mx-auto mt-6 p-4 border rounded shadow">
       <h2 className="text-2xl font-bold mb-4">📖 Borrow Book: {book.title}</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block mb-1 font-semibold">Quantity (max {book.copies}):</label>
+          <label className="block mb-1 font-semibold">
+            Quantity (max {book.copies}):
+          </label>
           <input
             type="number"
             min={1}

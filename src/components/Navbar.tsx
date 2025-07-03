@@ -11,9 +11,12 @@ const Navbar = () => {
     <nav className="bg-gradient-to-r from-indigo-800 via-indigo-600 to-purple-700 px-4 py-3 text-white shadow-lg">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
-        <h1 className="text-2xl md:text-3xl font-bold tracking-wide italic">
+        <Link
+          to="/"
+          className="text-2xl md:text-3xl font-bold tracking-wide italic"
+        >
           📚 MyLibrary
-        </h1>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-4 text-sm md:text-base">
