@@ -18,9 +18,9 @@ export interface BorrowSummary {
 }
 
 const url: string =
-  import.meta.env.VITE_API_BASE_URL ||
-  "https://library-management-server-gamma-sand.vercel.app/api";
+  import.meta.env.VITE_API_BASE_URL ;
 
+  // console.log("📡 API Base URL:", url);
 export const bookApi = createApi({
   reducerPath: "bookApi",
   baseQuery: fetchBaseQuery({ baseUrl: url }),
